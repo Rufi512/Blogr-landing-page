@@ -34,9 +34,9 @@ Your users should be able to:
 
 ### Links
 
-- Solution URL: [FrontendMentor Solution]()
+- Solution URL: [FrontendMentor Solution](https://www.frontendmentor.io/solutions/blogrlandingpage-webpacksass-vupCgaNcK)
 
-- Live Site URL: http://rufi512.github.io/Blogr-landing-page
+- Live Site URL: https://rufi512.github.io/Blogr-landing-page/
 
 
 ## My Process
