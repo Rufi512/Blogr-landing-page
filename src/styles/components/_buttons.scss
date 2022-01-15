@@ -1,0 +1,33 @@
+@use "../abstracts/colors" as colors;
+@use '../abstracts/mixins' as mix;
+
+@mixin button($type){
+	@include mix.centered(column,center,center);
+	width: 136px;
+	height: 40px;
+	font-size:0.9em;
+	border:none;
+	border-radius:130px;
+	font-weight:600;
+	cursor:pointer;
+	transition:all 0.3s ease;
+	@if $type == 'fill'{
+		background:nth(colors.$neutral,1);
+		color:nth(colors.$primary,1);
+
+		&:hover{
+			background:#ffffff2e;
+			color:nth(colors.$neutral,1);
+		}
+	}@else{
+		background:transparent;
+		border:1px solid nth(colors.$neutral,1);
+		color:nth(colors.$neutral,1);
+
+		&:hover{
+			background:nth(colors.$neutral,1);
+			color:nth(colors.$primary,1);
+		}
+	}
+
+}

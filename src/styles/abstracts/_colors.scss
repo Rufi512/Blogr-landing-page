@@ -1,0 +1,17 @@
+$primary:(
+	#ff525d, // light-red
+	#ff7a85, // very-light-red
+	#1f3f5b // very dark blue
+	);
+
+$neutral:(
+	#ffffff,
+	#c8c8cb,
+	#4b5862,
+	#25252d, 
+	);
+
+$gradient:(
+	linear-gradient(120deg,#ff886f 0%, #ff3d54 100%), // header
+	linear-gradient(0deg,#2c2d3f 0%,#3f4164 100%) // body
+	);

@@ -1,0 +1,404 @@
+@use "../abstracts/colors"as colors;
+@use '../abstracts/mixins'as mix;
+@use '../components/buttons'as btn;
+
+header {
+    position: absolute;
+    top: 57px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90%;
+    z-index: 1000;
+    background: transparent;
+
+    @include mix.centered(row, center, space-between);
+
+    .icon-mobile-header {
+        transform: scale(0.9);
+    }
+
+    .active-container-arrow {
+        transform: rotate(180deg);
+    }
+
+    .buttons-mobile-header {
+        position: relative;
+        width: 45px;
+        height: 35px;
+        display: flex;
+        @include mix.centered(row, center, space-between);
+
+        .label-nav-open,
+        .label-nav-close {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            cursor: pointer;
+
+            svg {
+                transition: all 0.3s ease;
+            }
+        }
+
+        .label-nav-close {
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s all ease;
+            left: 3px;
+        }
+
+        .label-nav-close svg {
+            transform: rotate(90deg);
+        }
+    }
+
+    nav {
+        display: none;
+    }
+
+    ul:first-child {
+        button {
+            @include mix.centered(row, center, space-between);
+            color: nth(colors.$neutral, 2);
+            font-weight: 600;
+            border: none;
+            background: transparent;
+
+            svg {
+                transition: all 0.2s ease;
+
+                path {
+                    stroke: nth(colors.$neutral, 2);
+                }
+
+                margin-left: 10px;
+            }
+        }
+    }
+
+
+
+}
+
+@media(min-width:1024px) {
+    header {
+        width: 77%;
+        justify-content: flex-start;
+
+        .buttons-mobile-header {
+            display: none;
+        }
+
+        nav {
+            @include mix.centered(row, center, space-between);
+            width: 100%;
+
+            .container-elements {
+                position: absolute;
+                width: 100px;
+                top: 38px;
+                left: -15px;
+                padding: 36px 26px;
+                border-radius: 5px;
+                list-style: none;
+                background: nth(colors.$neutral, 1);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+
+                li {
+                    margin-top: 8px;
+
+                    a {
+                        font-weight: 400;
+                        text-decoration: none;
+                        color: nth(colors.$neutral, 4);
+                        transition: all 0.2s ease;
+
+                        &:hover {
+                            font-weight: 600;
+                            color: nth(colors.$neutral, 4);
+                        }
+                    }
+                }
+
+                li:first-child {
+                    margin-top: 0;
+                }
+
+            }
+
+            .container-elements-active-desktop {
+                opacity: 1;
+                visibility: visible;
+            }
+
+        }
+
+        ul:first-child {
+            position: relative;
+            list-style: none;
+            @include mix.centered(row, center, space-between);
+            align-items:flex-start;
+
+            li {
+                position: relative;
+
+                button {
+                    color: darken(nth(colors.$neutral, 1), 10%);
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    span {
+                        border-bottom: 1px solid transparent;
+                        transition: all 0.2s ease;
+                    }
+
+                    svg {
+                        margin-left: 8px;
+                    }
+
+                    svg path {
+                        transition: all 0.2s ease;
+                    }
+
+                    &:hover {
+                        color: darken(nth(colors.$neutral, 1), 0%);
+
+                        svg path {
+                            stroke: nth(colors.$neutral, 1);
+                        }
+
+                        span {
+                            border-bottom: 1px solid nth(colors.$neutral, 1);
+                        }
+
+                    }
+                }
+            }
+
+            li:first-child button span,
+            li:last-child button span {
+                height: 13px;
+            }
+
+        }
+
+        .buttons-login {
+            display: flex;
+            list-style: none;
+            margin-right: -15px;
+
+            .button-outline {
+                @include mix.centered(column, center, center);
+                margin-right: 27px;
+                background: none;
+                text-decoration: none;
+                border: none;
+                color: nth(colors.$neutral, 1);
+                font-weight: 600;
+                width: 48px;
+                height: 48px;
+            }
+
+            .button-fill {
+                text-decoration: none;
+                @include btn.button('fill');
+                width: 137px;
+                height: 48px;
+            }
+        }
+    }
+}
+
+@media(max-width:1023px) {
+    .show-container-elements {
+        padding: 15px 0 !important;
+        height: max-content !important;
+        max-height: 500px !important;
+    }
+
+    .show-active-span {
+            color: nth(colors.$primary, 3);
+            opacity: 0.9;
+    }
+
+    header {
+
+        nav {
+            position: fixed;
+            margin: auto;
+            top: 132px;
+            left: 0;
+            right: 0;
+            bottom: 28px;
+            width: 87%;
+            border-radius: 7px;
+            @include mix.centered(column, center, flex-start);
+            background: white;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 10000;
+            overflow: auto;
+            box-shadow: 0px 12px 19px 2px #22222247;
+
+            ul {
+                list-style: none;
+                padding: 0;
+                width: 100%;
+
+                li {
+                    @include mix.centered(column, center, center);
+                    margin-top: 0px;
+
+                    button {
+                        padding: 10px 5px;
+                        margin: 0 5px;
+                        cursor: pointer;
+
+                        span {
+                            transition: all 0.3s ease;
+                            font-weight: 600;
+                        }
+                    }
+
+                    .container-elements {
+                        @include mix.centered(column, center, flex-start);
+                        background: lighten(nth(colors.$neutral, 2), 17%);
+                        padding: 0;
+                        max-height: 0px;
+                        overflow: hidden;
+                        border-radius: 5px;
+                        margin-top: 15px;
+                        width: 85%;
+                        transition: all 0.5s ease;
+
+                        li {
+                            margin-top: 25px;
+                        }
+
+                        li:first-child {
+                            margin-top: 0;
+                        }
+
+                        a {
+                            text-decoration: none;
+                            color: nth(colors.$primary, 3);
+                            opacity: 0.8;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+
+                li:first-child {
+                    margin-top: 10px;
+                }
+
+
+            }
+
+            .buttons-login {
+                width: 85%;
+                border-top: 1px solid nth(colors.$neutral, 2);
+                @include mix.centered(column, center, flex-start);
+
+                li:first-child {
+                    a {
+                        margin-top: 20px;
+                        font-weight: 600;
+                        text-decoration: none;
+                        color: nth(colors.$primary, 3);
+                        font-size: 1em;
+                        transition: all 0.3s ease;
+
+                        &:hover {
+                            color: lighten(nth(colors.$primary, 3), 10%);
+                        }
+                    }
+                }
+
+                li:last-child {
+                    margin-top: 15px;
+
+                    a {
+                        @include mix.centered(column, center, center);
+                        width: 136px;
+                        height: 47px;
+                        border-radius: 400px;
+                        font-weight: 600;
+                        text-decoration: none;
+                        text-align: center;
+                        color: nth(colors.$neutral, 1);
+                        background: nth(colors.$gradient, 1);
+                        font-size: 1em;
+                        transition: all 0.3s ease;
+                    }
+                }
+            }
+
+            ul:first-child {
+                button {
+                    color: nth(colors.$primary, 3);
+                    font-weight: 500;
+                    font-size: 1em;
+
+                    svg {
+                        transition: all 0.4s ease;
+                        margin-left:6px;
+                        margin-top:1px;
+                        path {
+                            stroke: nth(colors.$primary, 1);
+                        }
+
+                        
+                    }
+                }
+
+            }
+
+            .container-element-active {
+                padding: 15px 0;
+                max-height: 500px;
+            }
+
+        }
+
+        #active-nav:checked~.buttons-mobile-header {
+            .label-nav-open {
+                svg {
+                    transform: rotate(90deg);
+                }
+
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .label-nav-close {
+                opacity: 1;
+                visibility: visible;
+
+                svg {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+
+        #active-nav:checked~.nav-header {
+            opacity: 1;
+            visibility: visible;
+
+        }
+
+    }
+
+
+}

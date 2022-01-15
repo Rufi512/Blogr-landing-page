@@ -1,0 +1,6 @@
+@mixin centered($direction, $item-orietation, $content-orientation) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $item-orietation;
+    justify-content: $content-orientation;
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta name="description" content="Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@Rufi512">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="A modern publishing platform">
+    <meta property="og:url" content="https://rufi512.github.io/Blogr-landing-page/">
+    <meta property="og:image" content="./static/icons/logo.svg">
+    <meta property="og:image:width" content="150px">
+    <meta property="og:image:height" content="150px">
+    <meta property="og:description" content="Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/images/favicon-32x32.png">
+    <title>Frontend Mentor | [Blogr]</title>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+     .attribution {
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: wrap;
+        height: 20px;
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .attribution a {
+        margin-left: 5px;
+        color: hsl(228, 45%, 44%);
+    }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="#"><svg class="icon-mobile-header" data-src="./static/icons/logo.svg"></svg></a>
+        <input type="checkbox" id="active-nav" hidden>
+        <div class="buttons-mobile-header">
+            <label aria-label="menu" class="label-nav-open" for="active-nav"><svg data-src="./static/icons/icon-hamburger.svg"></svg></label>
+            <label aria-label="close" class="label-nav-close" for="active-nav"><svg data-src="./static/icons/icon-close.svg"></svg></label>
+        </div>
+        <nav class="nav-header">
+            <ul>
+                <li>
+                    <button onClick="showOptions(1)"><span>Product</span><svg data-src="./static/icons/icon-arrow-light.svg"></svg></button>
+                    <ul class="container-elements elements-product" id="elements-nav-1">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Marketplace</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button onClick="showOptions(2)"><span>Company</span> <svg data-src="./static/icons/icon-arrow-light.svg"></svg></button>
+                    <ul class="container-elements elements-company" id="elements-nav-2">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button onClick="showOptions(3)"><span>Connect</span> <svg data-src="./static/icons/icon-arrow-light.svg"></svg></button>
+                    <ul class="container-elements elements-connect" id="elements-nav-3">
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="buttons-login">
+                <li><a href="#" class="button-outline">Login</a></li>
+                <li><a href="#" class="button-fill">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="principal">
+        <picture class="image">
+            <source media="(max-width: 1023px)" srcset="./static/icons/bg-pattern-intro-mobile.svg" >
+            <source media="(min-width: 1024px)" srcset="./static/icons/bg-pattern-intro-desktop.svg">
+            <img class="illustration-mobile icon-mobile-principal" src="./static/icons/bg-pattern-intro-mobile.svg" alt="pattern-intro">
+        </picture>
+        <h1>A modern publishing platform</h1>
+        <h2>Grow your audience and build your online brand</h2>
+        <div class="container-buttons">
+            <button class="button-fill">Start for Free</button>
+            <button class="button-outline">Learn More</button>
+        </div>
+    </section>
+    <section class="section-2">
+        <h2 class="title-principal">Designed for the future</h2>
+        <picture class="illustration-mobile">
+            <source media="(max-width: 1023px)" srcset="./static/icons/illustration-editor-mobile.svg" >
+            <source media="(min-width: 1024px)" srcset="./static/icons/illustration-editor-desktop.svg">
+            <img class="illustration-mobile-content icon-mobile-section-2" src="./static/icons/illustration-editor-mobile.svg" alt="illustration-editor">
+        </picture>
+        <h3 class="subtitle-1">Introducing an extensible editor</h3>
+        <p class="content-1">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.
+            The editor supports management of multiple blogs and allows easy manipulation of embeds such as images,
+            videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or
+            change the looks of a blog.</p>
+        <h3 class="subtitle-2">Robust content management</h3>
+        <p class="content-2">Flexible content management enables users to easily move through posts. Increase the usability of your blog
+            by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
+    </section>
+    <section class="section-3-container">
+        <div class="section-3-desktop">
+            <img class="illustration-mobile illustration-section-3" src="./static/icons/illustration-phones.svg" alt="illustration-phones">
+            <div class="section-3">
+                <img class="illustration-mobile illustration-circle-section-3" src="./static/icons/bg-pattern-circles.svg" alt="illustration-circle">
+                <div class="section-3-content">
+                    <h2>State of the Art Infrastructure</h2>
+                    <p>With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
+                        This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-4">
+        <picture class="illustration-mobile">
+            <source media="(max-width: 1023px)" srcset="./static/icons/illustration-laptop-mobile.svg">
+            <source media="(min-width: 1024px)" srcset="./static/icons/illustration-laptop-desktop.svg">
+            <img class="illustration-mobile-set illustration-laptop-section-4" src="./static/icons/illustration-editor-mobile.svg" alt="illustration-laptop">
+        </picture>
+        <h2 class="title-principal">Free, open, simple</h2>
+        <p class="content-1">Blogr is a free and open source application backed by a large community of helpful developers. It supports
+            features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools,
+            and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
+        <h2 class="subtitle-1">Powerful tooling</h2>
+        <p class="content-2">Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
+            capable of producing even the most complicated sites.</p>
+    </section>
+    <footer class="footer">
+        <svg class="icon-mobile-header logo" data-src="./static/icons/logo.svg"></svg>
+        <nav class="nav-container">
+            <ul class="nav-1">
+                <li>Product</li>
+                <li><a href="#">Overview</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Integrations</a></li>
+            </ul>
+            <ul class="nav-2">
+                <li>Company</li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+            <ul class="nav-3">
+                <li>Connect</li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Newsletter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/Rufi512">Rufi512</a>.
+    </div>
+</body>
+
+</html>
